@@ -21,15 +21,11 @@ const Navigation = () => {
       <div className="container max-w-5xl mx-auto">
         <div className="flex items-center justify-between bg-card/95 backdrop-blur-sm brutal-border brutal-shadow-sm px-6 py-3">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary brutal-border flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-lg">
-                P
-              </span>
-            </div>
-            <span className="font-display font-bold text-foreground hidden sm:block">
-              Portfolio
-            </span>
+          <a
+            href="#"
+            className="bg-yellow-500 brutal-border brutal-shadow-sm px-4 py-2 font-mono font-bold text-black"
+          >
+            &gt;tiberiu.me_
           </a>
 
           {/* Desktop nav */}
@@ -45,7 +41,7 @@ const Navigation = () => {
             ))}
             <a
               href="#contact"
-              className="ml-2 px-4 py-2 bg-primary text-primary-foreground font-display font-bold brutal-border hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_hsl(0,0%,0%)] transition-all"
+              className="ml-2 px-4 py-2 bg-pink-500 text-black font-display font-bold brutal-border hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_hsl(0,0%,0%)] transition-all"
             >
               Hire Me
             </a>
@@ -81,7 +77,7 @@ const Navigation = () => {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-3 bg-primary text-primary-foreground font-display font-bold text-center brutal-border"
+              className="block px-4 py-3 bg-pink-500 text-black font-display font-bold text-center brutal-border"
             >
               Hire Me
             </a>

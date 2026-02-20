@@ -19,14 +19,12 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <div className="w-10 h-10 bg-primary brutal-border flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-lg">
-                P
-              </span>
-            </div>
-            <span className="font-display font-bold text-foreground">
-              Portfolio
-            </span>
+            <a
+              href="#"
+              className="bg-yellow-500 brutal-border brutal-shadow-sm px-4 py-2 font-mono font-bold text-black"
+            >
+              &gt;tiberiu.me_
+            </a>
           </motion.div>
 
           {/* Social links */}
@@ -59,7 +57,7 @@ const Footer = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center gap-1 text-muted-foreground font-body text-sm"
           >
-            Made with <Heart className="w-4 h-4 text-pink-500 fill-pink-500" /> in 2025
+            Built by me.
           </motion.p>
         </div>
       </div>
