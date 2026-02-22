@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Heart, Download } from "lucide-react";
+import cvPdf from "@/assets/Tiberiu-Corici_Frontend-Developer_CV.pdf";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/ctiberiu", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/tiberiucorici", label: "LinkedIn" },
+  { icon: Download, href: cvPdf, label: "Download CV", download: true },
   // { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
 ];
 
@@ -39,8 +41,9 @@ const Footer = () => {
               <a
                 key={social.label}
                 href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={social.download ? undefined : "_blank"}
+                rel={social.download ? undefined : "noopener noreferrer"}
+                download={social.download ? "Tiberiu-Corici_Frontend-Developer_CV.pdf" : undefined}
                 className="p-3 bg-card brutal-border hover-lift"
                 aria-label={social.label}
               >

@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Sparkles, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Sparkles, Github, Linkedin, Download } from "lucide-react";
+import heroPhoto from "@/assets/hero.webp";
+import cvPdf from "@/assets/Tiberiu-Corici_Frontend-Developer_CV.pdf";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/ctiberiu", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/tiberiucorici", label: "LinkedIn" },
+  { icon: Download, href: cvPdf, label: "Download CV", download: true },
 ];
 
 const Hero = () => {
@@ -71,16 +74,14 @@ const Hero = () => {
             {/* Main photo card */}
             <div className="relative bg-card brutal-border brutal-shadow p-4">
               {/* Photo placeholder */}
-              <div className="relative w-56 h-64 md:w-64 md:h-72 bg-gradient-to-br from-pink-500 via-orange-500 to-yellow-500 brutal-border overflow-hidden">
-                {/* Placeholder content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground">
-                    <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                      <span className="text-4xl">👤</span>
-                    </div>
-                    <p className="font-display font-bold text-sm">Your Photo</p>
-                  </div>
-                </div>
+              <div className="relative mx-auto w-56 h-64 md:w-64 md:h-72 bg-gradient-to-br from-pink-500 via-orange-500 to-yellow-500 brutal-border overflow-hidden">
+                <img
+                  src={heroPhoto}
+                  alt="Tiberiu Corici"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ objectPosition: "50% 33%" }}
+                  loading="eager"
+                />
               </div>
 
               {/* Name under photo */}
@@ -99,8 +100,9 @@ const Hero = () => {
                   <motion.a
                     key={social.label}
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={social.download ? undefined : "_blank"}
+                    rel={social.download ? undefined : "noopener noreferrer"}
+                    download={social.download ? "Tiberiu-Corici_Frontend-Developer_CV.pdf" : undefined}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="p-2 bg-muted brutal-border hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -150,7 +152,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 font-body"
+              className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 font-body mx-auto"
             >
               Passionate about crafting intuitive and delightful user experiences. 
               I transform ideas into pixel-perfect, interactive web applications.
